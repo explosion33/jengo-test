@@ -3,7 +3,11 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/mainStyle.css' %}" />
 
-<h1>Surveys</h1>
+<div class='topRibbon'>
+    <b>
+    <a href="{% url 'polls:home' %}" style="text-decoration:none; font-size:36px; font-family: Impact, Arial, Helvetica, sans-serif; color:rgb(255, 255, 255)">Velocity Games</a>
+    </b>
+</div>
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
