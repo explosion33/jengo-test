@@ -17,8 +17,18 @@ class IndexView(generic.ListView):
 class HomeView(generic.TemplateView ):
     template_name = 'polls/home.html'
     
+    def get_context_data(self, **kwargs):
 
-    
+        question = Question.objects.all()
+
+        number = 5
+
+        context = {
+            'num': number,
+            'question': question
+        }
+
+        return context
 
 
 class DetailView(generic.DetailView):

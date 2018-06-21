@@ -1,60 +1,37 @@
 <!DOCTYPE html>
-<style>
-    html, body {
-   margin: 0;
-   padding: 0;
-    }
-    b.a {
-        text-align: left;
-        margin-left: 40px;
-    }
 
-    div.a {
-        width: 100%;
-        background-color: lightgrey;
-        border-left-style: solid;
-        border-width: 5px;
-        border-color: rgb(54, 54, 54);
-        z-index: -1;
-        margin-left: 0px;
-        margin-top: 0px;
 
-    }
+{% load static %}
 
-    div.topRibbon {
-    width: 100%;
-    height: 55px;    
-    background-color: black;
-    text-align: left;
-    padding-left: 20px;
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
-    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-    }
+<link rel="stylesheet" type="text/css" href="{% static 'polls/mainStyle.css' %}" />
 
-  
-   
-</style>
+
 <body>
     {% block content %}
     
-
-    
-    
-    </div>
-    
-    <div class="rectangle"></div>
-    <div class='topRibbon'>
-        <b style="font-size:36px; font-family: Impact, Arial, Helvetica, sans-serif; color:rgb(255, 255, 255)">Velocity Games</b>
-    </div>
-    <br>
-    <br>
-    <br>
-    <b>TEXT</b>
-    <b>
-    <font size="3" color="red">This is some text!</font>
-    </b>
-    <br>
-    <kbd>Keyboard input</kbd> 
+        
+        <div class='topRibbon'>
+            <b style="font-size:36px; font-family: Impact, Arial, Helvetica, sans-serif; color:rgb(255, 255, 255)">Velocity Games</b>
+        </div>
+        <div class="b">
+        <br>
+        <br>
+        <br>
+        <b>{{num}}</b>
+        <b>
+            <font size="3" color="red">This is some text!</font>
+        </b>
+        <br>
+        <a>{{question.0.choice_set.all.0.choice_text}}</a>
+        <br>
+        <br>
+        <a href="{% url 'polls:index' %}">BUTTON</a> 
+        </div>
     {% endblock %}
 </body>
